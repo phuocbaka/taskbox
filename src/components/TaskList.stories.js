@@ -3,10 +3,11 @@ import React from 'react';
 import { PureTaskList } from './TaskList';
 import { taskData, actionsData } from './Task.stories';
 
+
 export default {
   component: PureTaskList,
   title: 'TaskList',
-  decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>],
+  decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>,],
   excludeStories: /.*Data$/,
 };
 

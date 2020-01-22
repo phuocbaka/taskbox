@@ -4,6 +4,7 @@ import { defaultTasksData } from './TaskList.stories';
 import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
 
+
 export default {
     component: PureInboxScreen,
     title:'InboxScreen',

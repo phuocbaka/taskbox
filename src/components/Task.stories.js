@@ -1,11 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Task from './Task';
+import { withKnobs, object } from '@storybook/addon-knobs/react'
 
 export default {
     component: Task,
     title: 'Task',
     excludeStories:/.*Data$/,
+    decorators: [withKnobs],
 }
 export const taskData = {
     id:'1',
@@ -18,7 +20,7 @@ export const actionsData = {
     onArchiveTask: action('onArchiveTask'),
 };
 export const Default = () => {
-    return <Task task={{...taskData}} {...actionsData}/>;
+    return <Task task={object('task', { ...taskData })} {...actionsData} />;
 };
 export const Pinned = () => <Task task={{...taskData,state:'TASK_PINNED'}} {...actionsData}/>;
 export const Archived = () => (
